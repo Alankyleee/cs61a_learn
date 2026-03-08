@@ -13,9 +13,9 @@ def a_plus_abs_b(a, b):
     3
     """
     if b < 0:
-        f = _____
+        f = sub
     else:
-        f = _____
+        f = add
     return f(a, b)
 
 def a_plus_abs_b_syntax_check():
@@ -42,7 +42,11 @@ def two_of_three(i, j, k):
     >>> two_of_three(5, 5, 5)
     50
     """
-    return _____
+    return add(min(i,j,k)**2,((i + j + k )-max(i,j,k)-min(i,j,k)) **2)
+
+#recommeded solution
+#    return i**2 + j**2 + k**2 - max(i, j, k)**2
+
 
 def two_of_three_syntax_check():
     """Check that your two_of_three code consists of nothing but a return statement.
@@ -66,6 +70,13 @@ def largest_factor(n):
     1
     """
     "*** YOUR CODE HERE ***"
+    i =  n - 1
+    #从n-1开始找
+    while i > 0 :
+        if n % i == 0:
+            return i
+        #获取最大因子并返回
+        i = i - 1
 
 
 def hailstone(n):
@@ -88,4 +99,18 @@ def hailstone(n):
     1
     """
     "*** YOUR CODE HERE ***"
+    #给定一个正整数 n，不断按下面规则生成下一个数：
+    # 如果 n 是 偶数 n = n / 2  
+    # 如果 n 是 奇数n = 3n + 1
+    length = 1
+    print(n)
+    while(n!=1):
+        if n % 2 == 0:
+            n = n // 2
+            length += 1
+        else:
+            n = 3*n +1
+            length += 1
+        print(n)
 
+    return length
