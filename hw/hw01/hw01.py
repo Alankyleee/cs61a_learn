@@ -104,6 +104,7 @@ def hailstone(n):
     # 如果 n 是 奇数n = 3n + 1
     length = 1
     print(n)
+    #给出第一n值，确保n=1不会遗漏
     while(n!=1):
         if n % 2 == 0:
             n = n // 2
@@ -111,6 +112,8 @@ def hailstone(n):
         else:
             n = 3*n +1
             length += 1
+        #运算后再给出当前值
         print(n)
+
 
     return length
